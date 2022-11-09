@@ -98,3 +98,7 @@ Layout
 .order-list {
     border-bottom: 2px solid #393333;
 }
+
+.hidden {
+    display: none;
+}
