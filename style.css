@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Smythe', cursive;
+}
+
+/* ==========
+Typography
+========== */
+
+h1 {
+    font-size: 2.4375rem;
+}
+
+.subtitle {
+    font-size: 0.8265rem;
+}
+
+h1,
+.subtitle,
+.payment-btn {
+    color: #fff;
+}
+
+.food-emoji {
+    font-size: 4.92rem;
+    opacity: .85;
+}
+
+.food-title,
+.order-item,
+.total-price {
+    font-size: 1.75rem;
+}
+
+.food-price,
+.order-item-price {
+    font-size: 1.25rem;
+}
+
+.food-ingredients,
+.remove-item-btn {
+    color: #8B8B8B;
+}
+
+/* buttons */
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+}
+
+.add-item {
+    border: 1.5px solid #8B8B8B;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 200;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.remove-item-btn {
+    background: #fff;
+    font-size: .75rem;
+}
+
+.payment-btn {
+    background: #16DB99;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* ==========
+Layout
+========== */
+
+.container-background{
+    background-image: url(images/ferks-guare-KEZdWfYD-ow-unsplash\ 1.png);
+    max-width: 600px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.food-detail {
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.order-list {
+    border-bottom: 2px solid #393333;
+}
