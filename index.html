@@ -27,8 +27,18 @@
             <div class="bill-total">
                 <p class="total-price" id="total-price"></p>
             </div>
-            <button class="payment-btn" id="payment-btn">Complete Order</button>
+            <button class="complete-order-btn" id="complete-order-btn">Complete Order</button>
         </section>
     </main>
+    <div class="modal" id="modal">
+        <h2 class="modal-title">Enter Card Details</h2>
+        <form action="">
+            <input placeholder="Enter your full name" type="text" class="input-detail" id="fullName" required>
+            <input placeholder="Enter your card number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19" class="input-detail" id="card-number" required>
+            <input placeholder="Enter CCV" type="tel" inputmode="numeric" pattern="[0-9\s]{3}" maxlength="3" class="input-detail" id="ccv-number" required>
+            <button type="submit" class="payment-btn" id="payment-btn">Pay</button>
+        </form>
+    </div>
+    <div class="thank-you-message" id="thank-you-message"></div>
 </body>
 </html>

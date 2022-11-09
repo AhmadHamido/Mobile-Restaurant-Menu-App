@@ -71,6 +71,7 @@ button {
     font-size: .75rem;
 }
 
+.complete-order-btn,
 .payment-btn {
     background: #16DB99;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
@@ -99,6 +100,7 @@ Layout
     border-bottom: 2px solid #393333;
 }
 
-.hidden {
+.hidden,
+.modal {
     display: none;
 }

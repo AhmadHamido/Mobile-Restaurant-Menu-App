@@ -11,6 +11,12 @@ document.addEventListener("click", function(e) {
     else if (e.target.id === 'remove-item-btn') {
         handleRemoveItemBtn(e.target.dataset.delete);
     }
+    else if (e.target.id === 'complete-order-btn') {
+        handleCompleteOrderBtn();
+    }
+    else if (e.target.id === 'payment-btn') {
+        handlePaymentBtn();
+    }
 })
 
 function handleAddItemClick(foodId) {
@@ -95,6 +101,25 @@ function handleRemoveItemBtn(orderId) {
     }
 
     render();
+}
+
+function handleCompleteOrderBtn() {
+    document.getElementById('modal').style.display = 'block';
+}
+
+function handlePaymentBtn() {
+    const inputName = document.getElementById('fullName');
+    const inputCardNumber = document.getElementById('card-number');
+    const inputCcvNumber = document.getElementById('ccv-number');
+
+    if(inputName.value && inputCardNumber.value && inputCcvNumber.value) {
+        document.getElementById('thank-you-message').innerHTML = `
+            <p class="thank-you-text">Thanks, ${inputName.value} your order is on its way!
+            </p>
+        `
+        containerOrder.classList.add('hidden');
+        document.getElementById('modal').style.display = 'none';
+    }
 }
 
 function getHtml() {
