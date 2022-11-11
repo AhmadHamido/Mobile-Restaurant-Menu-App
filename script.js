@@ -57,7 +57,10 @@ function handleAddItemClick(foodId) {
         totalPrice += order.price;
     })
 
-    document.getElementById('total-price').textContent = 'Total Price: ' + '$' + totalPrice;
+    document.getElementById('bill-total').innerHTML = `
+        <p class="total-price-text" id="total-price">Total Price:</p>
+        <p class="total-price-number" id="total-price-number">$${totalPrice}</p>
+    `
 
     containerOrder.classList.remove('hidden');
     render();
@@ -80,7 +83,10 @@ function handleRemoveItemBtn(orderId) {
         totalPrice += order.price;
     })
     
-    document.getElementById('total-price').textContent = 'Total Price: ' + '$' + totalPrice;
+    document.getElementById('bill-total').innerHTML = `
+        <p class="total-price-text" id="total-price">Total Price:</p>
+        <p class="total-price-number" id="total-price-number">$${totalPrice}</p>
+    `
 
     let orderList = '';
 
@@ -112,9 +118,14 @@ function handleCompleteOrderBtn() {
 
 function handlePaymentBtn() {
     const inputName = document.getElementById('fullName');
+    const inputCardNumber = document.getElementById('card-number');
+    const inputCCV = document.getElementById('ccv-number');
 
     document.getElementById('thank-you-message').textContent = `Thanks, ${inputName.value}! Your order is on its way!`
 
+    inputName.value = '';
+    inputCCV.value = '';
+    inputCardNumber.value = '';
 
     containerOrder.classList.add('hidden');
     document.getElementById('modal').style.display = 'none';

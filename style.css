@@ -6,7 +6,6 @@
 
 body {
     font-family: 'Smythe', cursive;
-    display: grid;
     grid-template-columns: 1.2em auto 1.2em;
 }
 
@@ -23,6 +22,15 @@ h1 {
     font-size: 0.8265rem;
 }
 
+.bill-title {
+    justify-self: center;
+}
+
+.bill-title,
+.bill-total {
+    align-self: center;
+}
+
 h1,
 .subtitle {
     grid-column: 2;
@@ -30,29 +38,67 @@ h1,
 
 h1,
 .subtitle,
-.payment-btn {
+.payment-btn,
+.complete-order-btn {
     color: #fff;
 }
 
 .food-emoji {
-    font-size: 4.92rem;
+    font-size: 4rem;
     opacity: .85;
+    grid-row: 2 / 5;
 }
 
 .food-title,
 .order-item,
-.total-price {
+.total-price-text {
     font-size: 1.75rem;
+    grid-column: 2;
+}
+
+.food-title {
+    grid-row: 2;
+}
+
+.food-ingredients {
+    grid-row: 3;
+}
+
+.food-price {
+    grid-row: 4;
 }
 
 .food-price,
-.order-item-price {
+.order-item-price,
+.total-price-number {
     font-size: 1.25rem;
 }
 
 .food-ingredients,
 .remove-item-btn {
     color: #8B8B8B;
+}
+
+.order,
+.order-item-price,
+.total-price-number,
+.total-price-text {
+    grid-row: 1;
+}
+
+.list {
+    list-style: none;
+    margin-bottom: 1em;
+}
+
+.total-price-text {
+    grid-column: 1;
+}
+
+.total-price-number,
+.order-item-price,
+.add-item {
+    justify-self: end;
 }
 
 /* buttons */
@@ -72,11 +118,14 @@ button {
     width: 50px;
     height: 50px;
     text-align: center;
+    grid-row: 2 / 4;
+    grid-column: -1;
 }
 
 .remove-item-btn {
     background: #fff;
     font-size: .75rem;
+    margin-left: 0.5em;
 }
 
 .complete-order-btn,
@@ -85,13 +134,22 @@ button {
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border-radius: 3px;
     font-weight: bold;
+    padding: 0.75em 0;
 }
 
 /* ==========
 Layout
 ========== */
-header {
+body,
+header,
+.food-detail,
+.container-order,
+.list,
+.bill-total {
     display: grid;
+}
+
+header {
     grid-column: 1 / -1;
     grid-template-columns: 1.2em auto;
 }
@@ -111,7 +169,19 @@ main,
     background-size: cover;
 }
 
+.container-order {
+    grid-template-rows: 100px auto 80px auto;
+}
+
 .food-detail {
+    grid-template: 
+        1.5em
+        repeat(3, auto)
+        1.5em 
+        / 
+        minmax(50px, 70px)
+        minmax(100px, 150px)
+        auto;
     border-bottom: 1px solid #D2D2D2;
 }
 
