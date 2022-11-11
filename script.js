@@ -14,10 +14,13 @@ document.addEventListener("click", function(e) {
     else if (e.target.id === 'complete-order-btn') {
         handleCompleteOrderBtn();
     }
-    else if (e.target.id === 'payment-btn') {
-        handlePaymentBtn();
-    }
 })
+
+document.addEventListener("submit", function(e){
+    e.preventDefault()
+    handlePaymentBtn();
+}
+)
 
 function handleAddItemClick(foodId) {
     const targetFoodObject = menuArray.filter(function(food) {
@@ -109,17 +112,12 @@ function handleCompleteOrderBtn() {
 
 function handlePaymentBtn() {
     const inputName = document.getElementById('fullName');
-    const inputCardNumber = document.getElementById('card-number');
-    const inputCcvNumber = document.getElementById('ccv-number');
 
-    if(inputName.value && inputCardNumber.value && inputCcvNumber.value) {
-        document.getElementById('thank-you-message').innerHTML = `
-            <p class="thank-you-text">Thanks, ${inputName.value} your order is on its way!
-            </p>
-        `
-        containerOrder.classList.add('hidden');
-        document.getElementById('modal').style.display = 'none';
-    }
+    document.getElementById('thank-you-message').textContent = `Thanks, ${inputName.value}! Your order is on its way!`
+
+
+    containerOrder.classList.add('hidden');
+    document.getElementById('modal').style.display = 'none';
 }
 
 function getHtml() {
