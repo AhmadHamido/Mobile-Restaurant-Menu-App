@@ -129,6 +129,7 @@ function handlePaymentBtn() {
 
     containerOrder.classList.add('hidden');
     document.getElementById('modal').style.display = 'none';
+    document.getElementById('message-container').style.display = 'block';
 }
 
 function getHtml() {

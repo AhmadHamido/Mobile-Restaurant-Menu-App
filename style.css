@@ -132,6 +132,12 @@ button {
     grid-column: -1;
 }
 
+.add-item:hover,
+.add-item:focus {
+    background-color: #393333;
+    color: #fff;
+}
+
 .remove-item-btn {
     background: #fff;
     font-size: .75rem;
@@ -145,6 +151,13 @@ button {
     border-radius: 3px;
     font-weight: bold;
     padding: 0.75em 0;
+}
+
+.complete-order-btn:hover,
+.complete-order-btn:focus,
+.payment-btn:hover,
+.payment-btn:focus {
+    background-color: #065F46;
 }
 
 .payment-btn {
@@ -226,6 +239,16 @@ form {
 }
 
 .hidden,
-.modal {
+.modal,
+.message-container {
     display: none;
+}
+
+.message-container {
+    background: #ECFDF5;
+    text-align: center;
+    color: #065F46;
+    margin-top: 2em;
+    padding: 2em 0;
+    font-size: 1.6rem;
 }
