@@ -113,7 +113,7 @@ function handleRemoveItemBtn(orderId) {
 }
 
 function handleCompleteOrderBtn() {
-    document.getElementById('modal').style.display = 'block';
+    document.getElementById('modal').style.display = 'grid';
 }
 
 function handlePaymentBtn() {

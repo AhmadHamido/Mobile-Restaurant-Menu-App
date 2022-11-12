@@ -22,12 +22,14 @@ h1 {
     font-size: 0.8265rem;
 }
 
-.bill-title {
+.bill-title,
+.modal-title {
     justify-self: center;
 }
 
 .bill-title,
-.bill-total {
+.bill-total,
+.modal-title {
     align-self: center;
 }
 
@@ -101,6 +103,14 @@ h1,
     justify-self: end;
 }
 
+.modal-title {
+    margin: 1em 0;
+}
+
+.input-detail {
+    margin-bottom: 1em;
+}
+
 /* buttons */
 
 button {
@@ -137,6 +147,10 @@ button {
     padding: 0.75em 0;
 }
 
+.payment-btn {
+    margin-top: 1em;
+}
+
 /* ==========
 Layout
 ========== */
@@ -145,7 +159,8 @@ header,
 .food-detail,
 .container-order,
 .list,
-.bill-total {
+.bill-total,
+form {
     display: grid;
 }
 
@@ -156,7 +171,9 @@ header {
 
 main,
 .modal,
-.message-container {
+.message-container,
+.modal-title,
+form {
     grid-column: 2;
 }
 
@@ -167,6 +184,25 @@ main,
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.modal {
+    position: fixed;
+    left: 1.2em;
+    right: 1.2em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 50vh;
+    max-width: 524px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 2px #666;
+    background-color: #ffffff;
+    grid-template: 
+        .25fr .65fr
+        /
+        .75em auto .75em ;
+    
 }
 
 .container-order {
